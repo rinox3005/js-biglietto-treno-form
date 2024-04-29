@@ -1,11 +1,19 @@
 'use strict';
 
+const user = document.getElementById('name');
 const distance = document.getElementById('distance');
 const age = document.getElementById('age');
 const sendButton = document.getElementById('send');
+const deleteButton = document.getElementById('delete');
+const passengerOut = document.getElementById('passenger');
+const discountOut = document.getElementById('discount');
+const cpNumber = document.getElementById('cp');
+const carNumber = document.getElementById('car');
+const priceOut = document.getElementById('price')
 
 sendButton.addEventListener('click', function () {
 
+    const userName = user.value;
     const travelDistance = Number(distance.value);
     const userAge = Number(age.value);
 
@@ -25,6 +33,12 @@ sendButton.addEventListener('click', function () {
 
     let ticketCost = (travelDistance * pricePerKm);
 
+    console.log('Name: ', userName);
+    console.log('Travel distance: ', travelDistance, 'km');
+    console.log('Age: ', userAge, 'years old');
+    console.log('Current price per Km: ', pricePerKm);
+    passengerOut.innerHTML = userName;
+
     // va applicato uno sconto del 20% per i minorenni
 
     if (userAge < 18) {
@@ -39,6 +53,14 @@ sendButton.addEventListener('click', function () {
         // -- assegno alla variabile ticketCost il nuovo valore con lo sconto under 18 applicato
 
         ticketCost = Math.round(ticketCostYoung * 100) / 100;
+
+        // -- mostro in console il valore con lo sconto under 18 applicato
+
+        console.log('Ticket price: ', ticketCost, '€', '- under 18 discount applied');
+
+        discountOut.innerHTML = ('Under 18')
+
+        priceOut.innerHTML = ticketCost + ' €';
 
         // va applicato uno sconto del 40% per gli over 65
 
@@ -56,6 +78,14 @@ sendButton.addEventListener('click', function () {
 
         ticketCost = Math.round(ticketCostOld * 100) / 100;
 
+        // -- mostro in console il valore con lo sconto over 65 applicato
+
+        console.log('Ticket price: ', ticketCost, '€', '- over 65 discount applied');
+
+        discountOut.innerHTML = ('Over 65')
+
+        priceOut.innerHTML = ticketCost + ' €';
+
 
     } else {
 
@@ -63,11 +93,31 @@ sendButton.addEventListener('click', function () {
 
         ticketCost = Math.round(ticketCost * 100) / 100;
 
+        // -- mostro nel documento il costo del biglietto senza nessuno sconto applicato
+
+        console.log('Ticket price: ', ticketCost);
+
+        discountOut.innerHTML = ('Standard')
+
+        priceOut.innerHTML = ticketCost + ' €';
     }
 
-    console.log('Travel distance: ', travelDistance, 'km');
-    console.log('Age: ', userAge, 'years old');
-    console.log('Current price per Km: ', pricePerKm);
-    console.log('Ticket price: ', ticketCost);
+    //generatore numero pratica
+
+    cpNumber.innerHTML = Math.floor((Math.random() * 100000) + 1);
+
+    //generatore numero carrozza
+
+    carNumber.innerHTML = Math.floor((Math.random() * 30) + 1);
 })
+
+
+deleteButton.addEventListener('click', function () {
+    distance.value = ('');
+    age.value = ('');
+    user.value = ('');
+})
+
+
+
 
