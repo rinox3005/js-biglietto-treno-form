@@ -61,7 +61,7 @@ ticketCost = ticketCostOld
 
 Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo, come da screenshot allegato. Il recap dei dati e l’output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
 
--- Creo un input che chieda all'utente il suo nome e assegno quel valore ad una variabile name
+-- Creo un input che chieda all'utente il suo nome 
 
 -- Utilizzo lo stesso input dei km da percorrere creato in precedenza e assegnato alla variabile distance
 
@@ -75,13 +75,13 @@ Solo una volta che il milestone 1 sarà completo e funzionante allora realizzere
 
 -- Aggiorno il funzionamento del bottone di invio dei dati creato in precedenza ed assegno il valore alle nuove variabili che mi servirá per l'output 
 
--- Faccio in modo che al click del bottone #send venga visualizzato nel documento il biglietto generato con i valori immessi, randomizzati e calcolati
-
 -- Realizzo un fac-simile di biglietto con i campi vuoti, non visualizzato in pagina (d-none) che verrá riempito e mostrato nel documento al click del bottone #send
+
+-- Faccio in modo che al click del bottone #send venga visualizzato nel documento il biglietto generato con i valori immessi, randomizzati e calcolati
 
 -- Mostro il prezzo finale formattato con massimo 2 decimali (toFixed(2))
 
 
 //********* BONUS: *********//
 
---- Creazione veste grafica piú gradevole (easy) e responsiva (??) ---
+--- Creazione veste grafica piú gradevole (easy), responsiva (??) e varie ---
