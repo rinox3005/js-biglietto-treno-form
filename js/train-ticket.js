@@ -52,13 +52,13 @@ sendButton.addEventListener('click', function () {
 
         // -- assegno alla variabile ticketCost il nuovo valore con lo sconto under 18 applicato
 
-        ticketCost = Math.round(ticketCostYoung * 100) / 100;
+        ticketCost = ticketCost.toFixed(2);
 
         // -- mostro in console il valore con lo sconto under 18 applicato
 
         console.log('Ticket price: ', ticketCost, '€', '- under 18 discount applied');
 
-        discountOut.innerHTML = ('Under 18')
+        discountOut.innerHTML = ('Discount Under 18')
 
         priceOut.innerHTML = ticketCost + ' €';
 
@@ -76,13 +76,13 @@ sendButton.addEventListener('click', function () {
 
         // -- assegno alla variabile ticketCost il nuovo valore con lo sconto under 18 applicato
 
-        ticketCost = Math.round(ticketCostOld * 100) / 100;
+        ticketCost = ticketCost.toFixed(2);
 
         // -- mostro in console il valore con lo sconto over 65 applicato
 
         console.log('Ticket price: ', ticketCost, '€', '- over 65 discount applied');
 
-        discountOut.innerHTML = ('Over 65')
+        discountOut.innerHTML = ('Discount Over 65')
 
         priceOut.innerHTML = ticketCost + ' €';
 
@@ -91,13 +91,13 @@ sendButton.addEventListener('click', function () {
 
         // -- se nessuna delle condizioni precedenti si é verificata calcolo il semplice costo del biglietto senza sconti
 
-        ticketCost = Math.round(ticketCost * 100) / 100;
+        ticketCost = ticketCost.toFixed(2);
 
         // -- mostro nel documento il costo del biglietto senza nessuno sconto applicato
 
         console.log('Ticket price: ', ticketCost);
 
-        discountOut.innerHTML = ('Standard')
+        discountOut.innerHTML = ('Standard Price')
 
         priceOut.innerHTML = ticketCost + ' €';
     }
