@@ -9,7 +9,8 @@ const passengerOut = document.getElementById('passenger');
 const discountOut = document.getElementById('discount');
 const cpNumber = document.getElementById('cp');
 const carNumber = document.getElementById('car');
-const priceOut = document.getElementById('price')
+const priceOut = document.getElementById('price');
+const ticket = document.getElementById('ticket');
 
 sendButton.addEventListener('click', function () {
 
@@ -109,6 +110,10 @@ sendButton.addEventListener('click', function () {
     //generatore numero carrozza
 
     carNumber.innerHTML = Math.floor((Math.random() * 30) + 1);
+
+    // mostro il ticket in pagina solo quando si inviano i dati
+
+    ticket.classList.remove('d-none');
 })
 
 
