@@ -128,6 +128,7 @@ deleteButton.addEventListener('click', function () {
     distance.value = ('');
     age.value = ('null');
     user.value = ('');
+    ticket.classList.add('d-none');
 })
 
 
