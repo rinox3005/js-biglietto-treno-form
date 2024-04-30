@@ -26,20 +26,19 @@
             </div>
             <div class="col-lg-3 col-md-12">
                 <h4>Travel Distance</h4>
-                <input class="form-control" type="text" id="distance" placeholder="Distance in km">
+                <input class="form-control" type="number" id="distance" placeholder="Distance in km">
             </div>
 
 
 
             <div class="col-lg-3 col-md-12">
                 <h4>Age Range</h4>
-                <input class="form-control" type="text" id="age" placeholder="How old are you?">
-                <!-- <select class="form-select" aria-label="Default select example">
-                    <option selected>-</option>
-                    <option value="1">Standard</option>
-                    <option value="2">Under 18</option>
-                    <option value="3">Over 65</option>
-                </select> -->
+                <select id="age" class="form-select" aria-label="Default select example">
+                    <option value="null">-</option>
+                    <option value="standard">Standard</option>
+                    <option value="under">Under 18</option>
+                    <option value="over">Over 65</option>
+                </select>
             </div>
             <div class="col-12 text-center pt-5 pb-5">
                 <div id="send" class="btn btn-primary">Submit</div>
@@ -68,7 +67,7 @@
                         <small class="fst-italic">Always arrive at the station on time to bord the train
                             confortably.
                             Alight
-                            od board train from correct side only.</small>
+                            or board train from correct side only.</small>
                     </div>
                     <div class="col-lg-3 col-md-12">
                         <button id="discount" class="btn btn-primary">Discount</button>

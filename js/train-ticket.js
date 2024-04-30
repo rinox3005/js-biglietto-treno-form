@@ -16,7 +16,7 @@ sendButton.addEventListener('click', function () {
 
     const userName = user.value;
     const travelDistance = Number(distance.value);
-    const userAge = Number(age.value);
+    const userAge = age.value;
 
     // -- definisco una variabile pricePerKm e le assegno il valore 0.21
 
@@ -32,24 +32,27 @@ sendButton.addEventListener('click', function () {
 
     // -- definisco una variabile ticketCost calcolando distance * 0.21
 
-    let ticketCost = (travelDistance * pricePerKm);
+
 
     console.log('Name: ', userName);
     console.log('Travel distance: ', travelDistance, 'km');
-    console.log('Age: ', userAge, 'years old');
+    console.log('Age Range: ', userAge);
     console.log('Current price per Km: ', pricePerKm);
     passengerOut.innerHTML = userName;
 
     // va applicato uno sconto del 20% per i minorenni
 
-    if (userAge < 18) {
+    if (userAge === 'under') {
+
+        let ticketCost = (travelDistance * pricePerKm);
+
         // -- definisco una variabile discountedYoung per lo sconto minorenni
 
         const discountedYoung = (ticketCost * youngDiscount) / 100;
 
         // -- definisco una variabile ticketCostYoung calcolandone il valore
 
-        const ticketCostYoung = (ticketCost - discountedYoung);
+        ticketCost = (ticketCost - discountedYoung);
 
         // -- assegno alla variabile ticketCost il nuovo valore con lo sconto under 18 applicato
 
@@ -65,7 +68,9 @@ sendButton.addEventListener('click', function () {
 
         // va applicato uno sconto del 40% per gli over 65
 
-    } else if (userAge > 65) {
+    } else if (userAge === 'over') {
+
+        let ticketCost = (travelDistance * pricePerKm);
 
         // -- definisco una variabile discountedYoung per lo sconto minorenni
 
@@ -73,7 +78,7 @@ sendButton.addEventListener('click', function () {
 
         // -- definisco una variabile ticketCostOld calcolandone il valore
 
-        const ticketCostOld = (ticketCost - discountedOld);
+        ticketCost = (ticketCost - discountedOld);
 
         // -- assegno alla variabile ticketCost il nuovo valore con lo sconto under 18 applicato
 
@@ -89,6 +94,8 @@ sendButton.addEventListener('click', function () {
 
 
     } else {
+
+        let ticketCost = (travelDistance * pricePerKm);
 
         // -- se nessuna delle condizioni precedenti si é verificata calcolo il semplice costo del biglietto senza sconti
 
@@ -119,7 +126,7 @@ sendButton.addEventListener('click', function () {
 
 deleteButton.addEventListener('click', function () {
     distance.value = ('');
-    age.value = ('');
+    age.value = ('null');
     user.value = ('');
 })
 
